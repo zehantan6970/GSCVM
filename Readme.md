@@ -1,14 +1,14 @@
 Pytorch implementation of SPVoteNet for paper "SPVoteNet: Registration of 3D Point Clouds with SuperPoint Votes"
 This paper focus on outlier rejection for 3D point clouds registration. 
 ![fig1](figures/Fig1.png)
-##Introduction
+## Introduction
 The point cloud data is a collection of unordered points, and the point cloud data of an object obtained in different ways has certain differences in density, number of points, and distance between points. In addition,the irregular structure of 3D point clouds leads to oversampling and undersampling in some areas. Point clouds are points distributed in space, which cannot be structured like pixels in images. Aboverall, the point cloud is an unordered, sparse, and unstructured set of vectors.Considering the characteristics of point clouds and the problems of related work,we adpot SPVoteNet to address the problems of 2D feature points without depth information, especially location information in 3D space, as well as the lack of massive data sets for 3D feature, and the problems of unordered, sparse and unstructured 3D feature acquisition. 
 Step1. The key alignment feature pairs are extracted from the source and target color maps with superglue to get the coarse alignment of key point matching.
 Step2. The key points obtained from step1 are converted from the pixel coordinate system to the camera coordinate system by using the depth camera parameter to get the key alignment feature pairs corresponding in the 3D point cloud, and then the alignment information of the feature points is voted by the distance and angle through the metric model to get the fine alignment of good point matching.
 Step3.To use the good point matching fine alignment obtained from step2 for point cloud registration
 Our proposed SPVoteNet also works best in industrial applications of 3D Reconstruction.
 
-##Installation
+## Installation
 See requirements.txt. 
 code has been tested with Ubuntu 20.04,GCC 7.5.0，python 3.8.0,PyTorch 1.7.1+cu110，CUDA11.0.
 
@@ -16,12 +16,13 @@ Pre-trained Weights
 We provide pre-trained weights superglue_indoor.pth in the SPVoteNet folder.
 
 The code is heavily borrowed from [SuperGlue](https://github.com/magicleap/SuperGluePretrainedNetwork) and [External-Attention](https://github.com/xmu-xiaoma666/External-Attention-pytorch)
-##DATASET
+
+## DATASET
 The dataset can be downloaded from https://3dmatch.cs.princeton.edu/ .
 You can use your dataset as TUM format. We also provide a simple example of TUM format.
 The demo data are provided by [BaiDuPan](https://pan.baidu.com/s/1M97myAn5iYDa1V49FJU2xA)  Extraction Code: 1234
 
-##Demo
+## Demo
 We provide a small demo to register them using SPVoteNet. The data files are saved in the demo_data folder, which can be replaced by your own data. 
 1. two-view 3D point cloud reconstruction by SPVoteNet.
     1.1 When testing the 3DMATCH dataset (point cloud files are needed, automatic point cloud file generation requires changes to the program).
