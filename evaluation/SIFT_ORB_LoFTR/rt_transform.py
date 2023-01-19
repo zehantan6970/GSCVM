@@ -59,9 +59,9 @@ def rtRegistrat(superglueTxtpath,sourcePly,targetPly):
                                       left=50, top=50,
                                       mesh_show_back_face=False)
 if __name__=="__main__":
-    superglueTxtpath = "F:/Gree/Data/scannet_eval/scene0002_00/superglueOutput/text3d/13_15.txt"
-    sourcePly = "F:/Gree/Data/scannet_eval/scene0002_00/scene0002_00_evaluation/ply_eval/13.ply"
-    targetPly = "F:/Gree/Data/scannet_eval/scene0002_00/scene0002_00_evaluation/ply_eval/15.ply"
+    superglueTxtpath = "F:/Data/scannet_eval/scene0002_00/superglueOutput/text3d/13_15.txt"
+    sourcePly = "F:/Data/scannet_eval/scene0002_00/scene0002_00_evaluation/ply_eval/13.ply"
+    targetPly = "F:/Data/scannet_eval/scene0002_00/scene0002_00_evaluation/ply_eval/15.ply"
     rtRegistrat(superglueTxtpath,sourcePly,targetPly)
 
 
