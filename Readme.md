@@ -1,13 +1,13 @@
-# SPVoteNet: Registration of 3D Point Clouds with SuperPoint Votes
-Pytorch implementation of SPVoteNet for paper "SPVoteNet: Registration of 3D Point Clouds with SuperPoint Votes"
+# Global Strongly Constrained Voting Mechanism for RGB-D Point Cloud Registration
+Pytorch implementation of GSC-VM for paper "Global Strongly Constrained Voting Mechanism for RGB-D Point Cloud Registration"
 This paper focus on outlier rejection for 3D point clouds registration. 
 ![fig1](figures/Fig1.png)
 ## Introduction
-The point cloud data is a collection of unordered points, and the point cloud data of an object obtained in different ways has certain differences in density, number of points, and distance between points. In addition,the irregular structure of 3D point clouds leads to oversampling and undersampling in some areas. Point clouds are points distributed in space, which cannot be structured like pixels in images. Aboverall, the point cloud is an unordered, sparse, and unstructured set of vectors.Considering the characteristics of point clouds and the problems of related work,we adpot SPVoteNet to address the problems of 2D feature points without depth information, especially location information in 3D space, as well as the lack of massive data sets for 3D feature, and the problems of unordered, sparse and unstructured 3D feature acquisition. 
+Point cloud registration is a crucial task in robotics, computer vision, and 3D reconstruction. Existing methods for outlier removal in RGB-D point cloud registration often rely on distance or angle metrics or deep learning techniques, which may not adequately address challenges related to geometric angles, distances, and global constraints. In this paper, we present the Global Strongly Constrained Voting Mechanism (GSC-VM), a novel outlier removal approach for RGB-D point cloud registration that outperforms traditional metrics and deep learning methods. GSC-VM utilizes a voting mechanism to gain confidence in registered feature point pairs, emphasizing its benefits in terms of geometric angles, distances, and global constraints. The method filters out point pairs that do not meet the constraint conditions, significantly reducing the possibility of mismatching point pairs. GSC-VM establishes pixel-wise dense feature matches at a coarse level using SuperGlue in RGB images and votes in 3D space based on metric distance and angle to obtain good point pairs matching at a fine level. Our comprehensive experiments on the 3DMatch and 3DLowMatch datasets demonstrate that GSC-VM significantly outperforms state-of-the-art methods in RGB-D point cloud registration, making it a valuable contribution to the field. 
 Step1. The key alignment feature pairs are extracted from the source and target color maps with superglue to get the coarse alignment of key point matching.
 Step2. The key points obtained from step1 are converted from the pixel coordinate system to the camera coordinate system by using the depth camera parameter to get the key alignment feature pairs corresponding in the 3D point cloud, and then the alignment information of the feature points is voted by the distance and angle through the metric model to get the fine alignment of good point matching.
 Step3.To use the good point matching fine alignment obtained from step2 for point cloud registration
-Our proposed SPVoteNet also works best in industrial applications of 3D Reconstruction.
+Our proposed GSC-VM also works best in industrial applications of 3D Reconstruction.
 
 ## Installation
 See requirements.txt. 
