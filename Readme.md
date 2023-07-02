@@ -16,8 +16,7 @@ code has been tested with Ubuntu 20.04,GCC 7.5.0，python 3.8.0,PyTorch 1.7.1+cu
 Pre-trained Weights
 We provide pre-trained weights superglue_indoor.pth in the SPVoteNet folder.
 
-The code is heavily borrowed from [SuperGlue](https://github.com/magicleap/SuperGluePretrainedNetwork) and [External-Attention](https://github.com/xmu-xiaoma666/External-Attention-pytorch)
-
+The code is heavily borrowed from [SuperGlue](https://github.com/magicleap/SuperGluePretrainedNetwork) 
 ## DATASET
 The dataset can be downloaded from https://3dmatch.cs.princeton.edu/ .
 You can use your dataset as TUM format. We also provide a simple example of TUM format.
